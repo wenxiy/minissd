@@ -26,7 +26,7 @@ We use SSDs every day, but rarely think about what happens between "save a file"
 │        FTL - Flash Translation Layer    │  ← Week 2
 │   Address Mapping / GC / Wear Leveling  │
 ├─────────────────────────────────────────┤
-│        NAND Physical Layer (C)          │  ← Week 1 ✅
+│        NAND Physical Layer (C)          │  ← Week 1
 │     Page Read / Write / Block Erase     │
 └─────────────────────────────────────────┘
 ```
@@ -65,7 +65,7 @@ minissd/
 
 ## Current Status / 当前进度
 
-### Week 1: NAND Physical Layer ✅
+### Week 1: NAND Physical Layer
 
 The foundation is complete. The NAND layer simulates real flash memory behavior with the following constraints enforced:
 
@@ -79,19 +79,19 @@ Week 1 基础层已完成。NAND 层模拟了真实闪存的物理行为，强�
 | **Wear limit** / 磨损上限 | A block is marked bad after exceeding the maximum erase count (100,000). / 擦写次数超过上限后自动标记为坏块 |
 | **Bad blocks** / 坏块 | Factory bad blocks are randomly generated at init; runtime bad blocks arise from wear. / 出厂坏块在初始化时随机生成，运行时坏块由磨损产生 |
 
-### Week 2: FTL (Planned) 🔲
+### Week 2: FTL (Planned) 
 
 Address mapping, garbage collection, wear leveling, bad block management.
 
 地址映射、垃圾回收、磨损均衡、坏块管理。
 
-### Week 3: CLI & Benchmark (Planned) 🔲
+### Week 3: CLI & Benchmark (Planned) 
 
 Interactive command-line interface and performance testing tools.
 
 交互式命令行界面和性能测试工具。
 
-### Week 4: Testing & Visualization (Planned) 🔲
+### Week 4: Testing & Visualization (Planned) 
 
 Google Test unit tests, Python performance charts, documentation.
 

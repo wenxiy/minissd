@@ -1,0 +1,64 @@
+=== MiniSSD - NAND Layer Test ===
+
+[INIT] Chip initialized: OK
+========== NAND Chip Info ==========
+  Blocks:       1024
+  Pages/Block:  64
+  Page Size:    4096 bytes
+  Total Size:   256 MB
+  Bad Blocks:   10 (1.0%)
+  Free Blocks:  1014
+  Total Reads:  0
+  Total Writes: 0
+  Total Erases: 0
+====================================
+
+[TEST] Using block 0 for testing
+
+[WRITE] Block 0, Page 0 (data=0xAA): OK
+[WRITE] Block 0, Page 1 (data=0xBB): OK
+[WRITE] Block 0, Page 2 (string): OK
+
+[READ]  Block 0, Page 0: OK, first 16 bytes:
+AA AA AA AA AA AA AA AA AA AA AA AA AA AA AA AA 
+[READ]  Block 0, Page 1: OK, first 16 bytes:
+BB BB BB BB BB BB BB BB BB BB BB BB BB BB BB BB 
+[READ]  Block 0, Page 2: OK, content:
+  "Hello from MiniSSD! This is page 2."
+[READ]  Block 0, Page 10 (free): OK, first 16 bytes:
+FF FF FF FF FF FF FF FF FF FF FF FF FF FF FF FF 
+
+--- Error Scenario Tests ---
+[WRITE] Overwrite Page 0: ERR: write to programmed page  (expected: ERR)
+[WRITE] Skip to Page 5: OK  (expected: OK, skipping is allowed)
+[WRITE] Write Page 3 after Page 5: ERR: page write order violation  (expected: ERR write order)
+[WRITE] Write to bad block 52: ERR: bad block  (expected: ERR)
+[READ]  Out-of-range block: ERR: address out of range  (expected: ERR)
+
+--- Erase Test ---
+[INFO]  Block 0 valid pages before erase: 4
+[ERASE] Block 0: OK
+[INFO]  Block 0 valid pages after erase: 0
+[INFO]  Block 0 erase count: 1
+[READ]  After erase, Block 0, Page 0: OK, first 16 bytes:
+FF FF FF FF FF FF FF FF FF FF FF FF FF FF FF FF 
+[WRITE] Re-write after erase, Page 0: OK
+
+--- Invalidate Test ---
+[INFO]  Block 0 valid pages: 1
+[INVAL] Page 0: OK
+[INFO]  Block 0 valid pages after invalidate: 0
+
+========== NAND Chip Info ==========
+  Blocks:       1024
+  Pages/Block:  64
+  Page Size:    4096 bytes
+  Total Size:   256 MB
+  Bad Blocks:   10 (1.0%)
+  Free Blocks:  1013
+  Total Reads:  5
+  Total Writes: 5
+  Total Erases: 1
+====================================
+
+=== All tests completed! ===

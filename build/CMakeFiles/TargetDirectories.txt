@@ -1,0 +1,4 @@
+D:/hypiAI/minissd/build/CMakeFiles/nand_lib.dir
+D:/hypiAI/minissd/build/CMakeFiles/minissd.dir
+D:/hypiAI/minissd/build/CMakeFiles/edit_cache.dir
+D:/hypiAI/minissd/build/CMakeFiles/rebuild_cache.dir

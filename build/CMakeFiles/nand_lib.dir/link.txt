@@ -1,0 +1,2 @@
+C:\msys64\mingw64\bin\ar.exe qc libnand_lib.a CMakeFiles/nand_lib.dir/src/nand/nand_chip.c.obj CMakeFiles/nand_lib.dir/src/nand/nand_utils.c.obj
+C:\msys64\mingw64\bin\ranlib.exe libnand_lib.a

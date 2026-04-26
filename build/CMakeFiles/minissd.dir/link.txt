@@ -1,0 +1,3 @@
+C:\msys64\mingw64\bin\cmake.exe -E rm -f CMakeFiles\minissd.dir/objects.a
+C:\msys64\mingw64\bin\ar.exe qc CMakeFiles\minissd.dir/objects.a @CMakeFiles\minissd.dir\objects1.rsp
+C:\msys64\mingw64\bin\c++.exe -g -static -static-libgcc -static-libstdc++ -Wl,--whole-archive CMakeFiles\minissd.dir/objects.a -Wl,--no-whole-archive -o minissd.exe -Wl,--out-implib,libminissd.dll.a -Wl,--major-image-version,0,--minor-image-version,0 @CMakeFiles\minissd.dir\linkLibs.rsp
